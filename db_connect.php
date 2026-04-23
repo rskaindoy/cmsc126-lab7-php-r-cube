@@ -1,18 +1,17 @@
 <?php
-$servername = "localhost"; // Name of the server
-$username = "root"; // Username
-$password = ""; // Password
-// $dbname = ""; // add database name
+$servername = "localhost";  // name of the server
+$username = "root";         // un
+$password = "";             // pw
+$dbname = "studentDB";      // database name
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);  // $dbname 
+// create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully!";
+echo "Connected successfully! <br/>";
 
-// Close the connection
-$conn->close()
+// close the connection $conn->close()
 ?>
