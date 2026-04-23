@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Regis</title>
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+    </head>
+    <body>
+        <h1>Student Registration</h1>
+        <p>All fields marked * are required.</p>
+
+        <br>
+        <form>
+            <h4>PERSONAL INFORMATION</h4>
+            <label for="name">Name *</label><br>
+            <input type="text" id="name" name="name" value="e.g. Juan Dela Cruz" required><br>
+            <br>
+            <label for="age">Age *</label><br>
+            <input type="number" id="age" name="age" required><br>
+            <br>
+            <label for="email">Email *</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <p>Must be a valid email address (max 40 chars).</p>
+            
+            <h4>ACADEMIC INFORMATION</h4>
+            <label for="course">Course *</label><br>
+            <input type="text" id="course" name="course" value="e.g. BS Computer Science" required><br>
+            <br>
+            <label for="yearlvl">Year Level *</label><br>
+            <select id="yearlvl">
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+            </select><br>
+            <br>
+            <label for="grad">Graduating this year? *</label><br>
+            <input type="checkbox" id="grad" name="Yes" value="1">
+        </form>
+
+        <h4>PROFILE PHOTO</h4>
+        <!-- Image Upload -->
+        <!-- button does nothing yet-->
+        <button type="button">Submit Registration</button>
+        
+        <h4>RECORD MANAGEMENT</h4>
+        <p>LOOK UP BY STUDENT ID</p>
+        <!-- buttons do nothing yet-->
+        <button type="button">Search</button>
+        <button type="button">Update</button>
+        <button type="button">Delete</button>
+    </body>
+</html>
