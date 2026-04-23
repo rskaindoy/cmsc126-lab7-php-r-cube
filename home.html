@@ -11,49 +11,54 @@
         <p>All fields marked * are required.</p>
 
         <br>
-        <form>
+        <form method="POST" action="insert.php" enctype="multipart/form-data">
+
             <h4>PERSONAL INFORMATION</h4>
+
             <label for="name">Name *</label><br>
-            <input type="text" id="name" name="name" value="e.g. Juan Dela Cruz" required><br>
-            <br>
+            <input type="text" id="name" name="name" placeholder="e.g. Juan Dela Cruz" maxlength="40" required><br><br>
+            
             <label for="age">Age *</label><br>
-            <input type="number" id="age" name="age" required><br>
-            <br>
+            <input type="number" id="age" name="age" min="0" max="99" required><br><br>
+
             <label for="email">Email *</label><br>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" maxlength="40" required><br>
             <p>Must be a valid email address (max 40 chars).</p>
             
             <h4>ACADEMIC INFORMATION</h4>
+
             <label for="course">Course *</label><br>
-            <input type="text" id="course" name="course" value="e.g. BS Computer Science" required><br>
-            <br>
+            <input type="text" id="course" name="course" placeholder="e.g. BS Computer Science" maxlength="40" required><br><br>
+
             <label for="yearlvl">Year Level *</label><br>
-            <select id="yearlvl">
-                <option value="I">I</option>
-                <option value="II">II</option>
-                <option value="III">III</option>
-                <option value="IV">IV</option>
-            </select><br>
-            <br>
+            <select id="yearlvl" name="yearlvl" required>
+                <option value="1">I</option>
+                <option value="2">II</option>
+                <option value="3">III</option>
+                <option value="4">IV</option>
+            </select><br><br>
+
             <label for="grad">Graduating this year? *</label><br>
-            <input type="checkbox" id="grad" name="Yes" value="1">
+            <input type="checkbox" id="grad" name="grad_status" value="1"><br><br>
+
+            <h4>PROFILE PHOTO</h4>
+
+            <label for="image">Profile Image *</label>
+            <input type="file" name="image" accept="image/*" required><br><br>
+            
+            <button type="submit">Submit Registration</button>
         </form>
 
-        <h4>PROFILE PHOTO</h4>
-        <!-- Image Upload -->
-        <!-- Use a file input (<input type="file">) in your form
-            Save the uploaded file inside the uploads/ folder
-            Store only the file path (e.g., uploads/filename.jpg) in the database
-            -->
-        <!-- button does nothing yet-->
-        <button type="button">Submit Registration</button>
-        
-        <h4>RECORD MANAGEMENT</h4>
-        <p>LOOK UP BY STUDENT ID</p>
-        <!-- Enter Student form-->
-        <!-- buttons do nothing yet-->
-        <button type="button">Search</button>
-        <button type="button">Update</button>
-        <button type="button">Delete</button>
+        <form>
+
+            <h4>RECORD MANAGEMENT</h4>
+
+            <label for="code">LOOK UP BY STUDENT ID</label>
+            <input type="text" id="code" name="code" placeholder="e.g. 2024-00123" required><br><br>
+            
+            <button type="submit" name="action" value="search">Search</button>
+            <button type="submit" name="action" value="update">Update</button>
+            <button type="submit" name="action" value="delete">Delete</button>
+        </form>
     </body>
 </html>
