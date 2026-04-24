@@ -4,7 +4,8 @@ require_once 'db_connect.php';
 // student table
 // id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, previously the PK
 // code = student ID like 2024-XXXXX
-$sql1 = "CREATE TABLE students (
+// removed possible creation of new table
+$sql1 = "CREATE TABLE IF NOT EXISTS students ( 
             id VARCHAR(20) UNIQUE PRIMARY KEY,
             name VARCHAR(40) NOT NULL,
             age INT(2) CHECK (age >= 0 AND age <= 99),
@@ -15,7 +16,7 @@ $sql1 = "CREATE TABLE students (
         )";
 
 // images table
-$sql2 = "CREATE TABLE student_images (
+$sql2 = "CREATE TABLE IF NOT EXISTS student_images (
     image_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     student_id VARCHAR(20),
     image_path VARCHAR(255) NOT NULL,
