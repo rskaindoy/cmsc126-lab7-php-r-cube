@@ -17,7 +17,7 @@ $sql1 = "CREATE TABLE students (
 // images table
 $sql2 = "CREATE TABLE student_images (
     image_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    student_id INT UNSIGNED,
+    student_id VARCHAR(20),
     image_path VARCHAR(255) NOT NULL,
     FOREIGN KEY (student_id) REFERENCES students(id)
     ON DELETE CASCADE
