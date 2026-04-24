@@ -40,7 +40,7 @@ $upload_path = "uploads/" . basename($image_name);
 move_uploaded_file($image_tmp, $upload_path);
 
 // insert into students table
-$sql1 = "INSERT INTO students (id, name, age, email, course, yearlvl, grad_status)
+$sql1 = "INSERT INTO students (id, name, age, email, course, year_lvl, grad_status)
 VALUES ('$student_id', '$name', '$age', '$email', '$course', '$yearlvl', '$grad_status')";
 
 if ($conn->query($sql1) === TRUE) {
@@ -49,7 +49,8 @@ if ($conn->query($sql1) === TRUE) {
     VALUES ('$student_id', '$upload_path')";
 
     if ($conn->query($sql2) === TRUE) {
-        echo "Registration successful! ID: " . $student_id;
+        header("Location: home.html?status=success&id=" . $student_id);
+        exit();
     } else {
         echo "Image insert error: " . $conn->error;
     }
