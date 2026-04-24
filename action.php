@@ -8,8 +8,10 @@ if (isset($_POST['action'])) {
     if ($action == 'search') {
         include 'search.php'; 
     } elseif ($action == 'update') {
-        include 'update.php'; 
-    } elseif ($action == 'delete') {
+        header ('Location: update.php');  //goes to new page, i am not writing a js for this shit
+        exit();
+    }  //new page 
+        elseif ($action == 'delete') {
         include 'delete.php';
     }
 }
