@@ -7,7 +7,7 @@ if (isset($_POST['search_id'])) {
     $search_id = $_POST['search_id'];
 
     $sql = "SELECT students.id, students.name, students.age, students.email, students.course, 
-                   students.year_lvl, students.grad_status, student_images.image_path 
+                    students.year_lvl, students.grad_status, student_images.image_path 
             FROM students 
             JOIN student_images ON students.id = student_images.student_id 
             WHERE students.id = '$search_id'";
@@ -20,21 +20,17 @@ if (isset($_POST['search_id'])) {
         die("Student not found.");
     }
 }
-
-
-
-
 ?>
 
 
 
 <h2>Edit Info</h2>
-<!-- same core code as home html, except there are predefined values -->
+<!-- same core code as home html, except there are predefined values and user edits them -->
 <?php if ($row): ?>
 
     <img src="<?php echo $row['image_path']; ?>" width="100"><br><br>
 
-    <form method="POST" action="update_student.php">
+    <form method="POST" action="update_student.php" enctype="multipart/form-data">
         <label for="name">Name </label><br>
             <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" maxlength="40"><br><br>
             
